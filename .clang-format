@@ -1,1 +1,13 @@
 BasedOnStyle: Google
+
+# 連続して変数への代入の際に整列させる
+AlignConsecutiveAssignments: true
+
+# 末尾のコメントを揃える
+AlignTrailingComments: true
+
+# 1行の長さを無制限にする
+ColumnLimit: 0
+
+# インデント数
+IndentWidth: 4
