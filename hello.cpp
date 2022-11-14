@@ -15,7 +15,7 @@ typedef long double ld;
 #define REPD(i, n) for (ll i = n; i > 0; --i)
 #define REP2(i, a, b) for (ll i = a; i < b; ++i)
 #define REPD2(i, a, b) for (ll i = a; i > b; --i)
-#define printd(a, n) cout << std::fixed << std::setprecision(n) << a << endl
+#define printd(a, n) cout << fixed << setprecision(n) << a << endl
 #define inputvec(v) REP(i, v.size()) cin >> v[i]
 #define printvec(v) cout << v[0]; REP(i, v.size()-1) cout << ' ' << v[i+1]; cout << endl;
 
