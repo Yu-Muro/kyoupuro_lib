@@ -22,21 +22,30 @@ typedef unsigned long long ull;
 #define inputvec(v) for (ull i = 0; i < v.size(); ++i) cin >> v[i]
 #define pbllvec(v, n) for (ull i = 0; i < n; i++) {ll temp; cin >> temp; v.pb(temp);}
 #define printvec(v) cout << v[0]; for (ull i = 0; i < v.size() - 1; ++i) cout << ' ' << v[i + 1]; cout << endl;
+#define printset(v) auto itr = (v).begin(); cout << *itr; itr++; for (; itr != (v).end(); itr++) cout << ' ' << *itr; cout << endl;
+
 int main() {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    string ans = "No";
-    bool yes   = false;
-    for (const auto& w : s) {
-        if (w == 'o') yes = true;
-        if (w == 'x') {
-            cout << ans << endl;
-            return 0;
+    ll n, q;
+    cin >> n >> q;
+    vector<multiset<ll>> card_list(n + 1, multiset<ll>());
+    map<ll, set<ll>> box_list{};
+    REP(t, q) {
+        int x;
+        cin >> x;
+        if (x == 1) {
+            ll i, j;
+            cin >> i >> j;
+            card_list[j].insert(i);
+            box_list[i].insert(j);
+        } else if (x == 2) {
+            ll i;
+            cin >> i;
+            printset(card_list[i]);
+        } else {
+            ll i;
+            cin >> i;
+            printset(box_list[i]);
         }
     }
-    if (yes) ans = "Yes";
-    cout << ans << endl;
     return 0;
 }
