@@ -47,6 +47,6 @@ int main() {
 
     // 答え
     ll ans = -1;
-    REP(j, m + 1) ans = max(res, dp[n][j]);
+    REP(j, m + 1) ans = max(ans, dp[n][j]);
     cout << ans << endl;
 }

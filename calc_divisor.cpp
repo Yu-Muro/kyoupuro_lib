@@ -31,7 +31,7 @@ vecll calc_divisor(ll n) {
 int main() {
     ll n;
     cin >> n;
-    auto ans = calc_devisor(n);
+    auto ans = calc_divisor(n);
     cout << ans.size() << endl;
     return 0;
 }
