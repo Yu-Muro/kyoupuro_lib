@@ -25,22 +25,25 @@ typedef unsigned long long ull;
 #define printset(v) auto itr = (v).begin(); cout << *itr; itr++; for (; itr != (v).end(); itr++) cout << ' ' << *itr; cout << endl;
 
 int main() {
-    ll n; cin >> n;
-    vector<string> name(n);
-    vecll age(n);
-    ll min_age = 1e11;
-    ll idx = 0;
-    REP(i, n) {
-        cin >> name[i] >> age[i];
-        if(min_age > age[i]) {
-            min_age = age[i];
-            idx = i;
-        }
+    int n, m; cin >> n >> m;
+    dsu d(n+1);
+    REP(i, m) {
+        int u, v; cin >> u >> v;
+        d.merge(u, v);
     }
-    REP(i, n) {
-        if(idx == n) idx = 0;
-        cout << name[idx] << endl;
-        idx++;
+    int k; cin >> k;
+    set<pair<int, int>> vec;
+    REP(i, k) {
+        int x, y; cin >> x >> y;
+        pair<int, int> z = mp(d.leader(x), d.leader(y));
+        vec.insert(z);
+    }
+    int t; cin >> t;
+    REP(ii, t) {
+        int p, q; cin >> p >> q;
+        pair<int, int> r = mp(d.leader(p), d.leader(q));
+        if(vec.find(r) != vec.end()) cout << "No" << endl;
+        else cout << "Yes" << endl;
     }
     return 0;
 }

@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
-#include <atcoder/all>
 using namespace std;
-using namespace atcoder;
 typedef long long ll;
 typedef long double ld;
 typedef unsigned long long ull;
@@ -25,22 +23,49 @@ typedef unsigned long long ull;
 #define printset(v) auto itr = (v).begin(); cout << *itr; itr++; for (; itr != (v).end(); itr++) cout << ' ' << *itr; cout << endl;
 
 int main() {
-    ll n; cin >> n;
-    vector<string> name(n);
-    vecll age(n);
-    ll min_age = 1e11;
-    ll idx = 0;
+    int w, h; cin >> w >> h;
+    int n; cin >> n;
+    int m = n+1;
+    int M = -1;
+    set<pair<int, int>> ichigo;
     REP(i, n) {
-        cin >> name[i] >> age[i];
-        if(min_age > age[i]) {
-            min_age = age[i];
-            idx = i;
+        int y, x; cin >> y >> x;
+        auto p = mp(--x, --y);
+        ichigo.insert(p);
+    }
+    int a; cin >> a;
+    vector<int> a_list(a+2);
+    a_list[0] = 0;
+    a_list[a+1] = w;
+    REP(i, a) {
+        int t; cin >> t; t--;
+        a_list[i+1] = t;
+    }
+    int b; cin >> b;
+    vector<int> b_list(b+2);
+    b_list[0] = 0;
+    b_list[b+1] = h;
+    REP(i, b) {
+        int t; cin >> t; t--;
+        b_list[i+1] = t;
+    }
+    REP(i, a+1) {
+        REP(j, b+1) {
+            int left = a_list[i];
+            int right = a_list[i+1];
+            int top = b_list[j];
+            int down = b_list[j+1];
+            int cnt = 0;
+            REP2(s, left, right) {
+                REP2(t, top, down) {
+                    auto now = mp(s, t);
+                    if(ichigo.find(now) != ichigo.end()) cnt++;
+                }
+            }
+            m = min(cnt, m);
+            M = max(cnt, M);
         }
     }
-    REP(i, n) {
-        if(idx == n) idx = 0;
-        cout << name[idx] << endl;
-        idx++;
-    }
+    cout << m << ' ' << M << endl;
     return 0;
 }

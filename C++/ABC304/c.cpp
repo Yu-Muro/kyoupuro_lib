@@ -25,22 +25,27 @@ typedef unsigned long long ull;
 #define printset(v) auto itr = (v).begin(); cout << *itr; itr++; for (; itr != (v).end(); itr++) cout << ' ' << *itr; cout << endl;
 
 int main() {
-    ll n; cin >> n;
-    vector<string> name(n);
-    vecll age(n);
-    ll min_age = 1e11;
-    ll idx = 0;
-    REP(i, n) {
-        cin >> name[i] >> age[i];
-        if(min_age > age[i]) {
-            min_age = age[i];
-            idx = i;
+    ll n, d; cin >> n >> d;
+    vecll x(n); vecll y(n);
+    REP(i, n) cin >> x[i] >> y[i];
+    vector<int> vec(n, 0); vec[0] = 1;
+    queue<int> a; a.push(0);
+    while(!a.empty()) {
+        ll now = a.front();
+        a.pop();
+        REP(i, n) {
+            if(now == i) continue;
+            if(vec[i]) continue;
+            ll dist = (x[i] - x[now]) * (x[i] - x[now]) + (y[i] - y[now]) * (y[i] - y[now]);
+            if(dist <= d*d) {
+                vec[i] = 1;
+                a.push(i);
+            }
         }
     }
     REP(i, n) {
-        if(idx == n) idx = 0;
-        cout << name[idx] << endl;
-        idx++;
+        if(vec[i]) cout << "Yes" << endl;
+        else cout << "No" << endl;
     }
     return 0;
 }

@@ -26,21 +26,12 @@ typedef unsigned long long ull;
 
 int main() {
     ll n; cin >> n;
-    vector<string> name(n);
-    vecll age(n);
-    ll min_age = 1e11;
-    ll idx = 0;
-    REP(i, n) {
-        cin >> name[i] >> age[i];
-        if(min_age > age[i]) {
-            min_age = age[i];
-            idx = i;
-        }
-    }
-    REP(i, n) {
-        if(idx == n) idx = 0;
-        cout << name[idx] << endl;
-        idx++;
-    }
+    if(n < 1e3) cout << n << endl;
+    else if(n < 1e4) cout << n - n % 10 << endl;
+    else if(n < 1e5) cout << n - n % 100 << endl;
+    else if(n < 1e6) cout << n - n % 1000 << endl;
+    else if(n < 1e7) cout << n - n % 10000 << endl;
+    else if(n < 1e8) cout << n - n % 100000 << endl;
+    else if(n < 1e9) cout << n - n % 1000000 << endl;
     return 0;
 }
