@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 using namespace std;
+using namespace atcoder;
 typedef long long ll;
 typedef long double ld;
 #define mp make_pair
@@ -21,10 +23,10 @@ int main() {
     string s; cin >> s;
     int l = s.size();
     int ans = -1;
-    REP(i, l+1) {
-        REP2(j, i+1, l+1) {
-            string t= s.substr(i, j);
-            string u = s.substr(i, j); reverse(all(u));
+    REP(i, l) {
+        REP2(j, i, l) {
+            string t= s.substr(i, j-i+1);
+            string u(rall(t));
             if(t == u) ans = max(ans, (int)u.size());
         }
     }
