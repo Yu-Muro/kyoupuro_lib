@@ -3,7 +3,6 @@
 競技プログラミングをしていく中で，役に立ちそうなファイルやコンテストに通したプログラム．
 常設コンテストの提出はディレクトリごとに作成．
 
-
 ## ディレクトリ / ファイルの説明
 
 ### ディレクトリ
@@ -19,3 +18,8 @@
 - hello.cpp: C++のテンプレート
 - knapsack.cpp: ナップサック問題の解放
 - calc_divisor.cpp: 約数の列挙
+
+### commit message
+
+- add: {level}-{ac, wa, tle, etc.}
+- docs: change details
