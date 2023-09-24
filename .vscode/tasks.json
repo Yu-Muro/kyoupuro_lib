@@ -11,7 +11,7 @@
                 "-I",
                 "~/ac-library/",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.out"
+                "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -33,8 +33,10 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+				"-I",
+                "~/ac-library/",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}-gcc.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -45,26 +47,6 @@
             "group": "build",
             "detail": "デバッガーによって生成されたタスク。"
         },
-        {
-            "type": "cppbuild",
-            "label": "C/C++: g++ アクティブなファイルのビルド",
-            "command": "/usr/bin/g++",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "デバッガーによって生成されたタスク。"
-        }
     ],
     "version": "2.0.0"
 }
