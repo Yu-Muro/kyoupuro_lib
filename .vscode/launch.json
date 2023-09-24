@@ -1,29 +1,7 @@
 {
-    "version": "0.2.0",
     "configurations": [
         {
-            "name": "g++ - Build and debug active file",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.out",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "/usr/bin/gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: g++ build active file",
-        },
-        {
-            "name": "C/C++: gcc アクティブ ファイルのビルドとデバッグ",
+            "name": "C/C++: g++-11 アクティブ ファイルのビルドとデバッグ",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
@@ -39,14 +17,67 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 },
+				{
+					"version": "0.2.0",
+					"configurations": [
+						{
+							"name": "g++ - Build and debug active file",
+							"type": "cppdbg",
+							"request": "launch",
+							"program": "${fileDirname}\\${fileBasenameNoExtension}.out",
+							"args": [],
+							"stopAtEntry": false,
+							"cwd": "${fileDirname}",
+							"environment": [],
+							"externalConsole": false,
+							"MIMode": "gdb",
+							"miDebuggerPath": "/usr/bin/gdb",
+							"setupCommands": [
+								{
+									"description": "Enable pretty-printing for gdb",
+									"text": "-enable-pretty-printing",
+									"ignoreFailures": true
+								}
+							],
+							"preLaunchTask": "C/C++: g++ build active file",
+						},
+						{
+							"name": "C/C++: gcc アクティブ ファイルのビルドとデバッグ",
+							"type": "cppdbg",
+							"request": "launch",
+							"program": "${fileDirname}/${fileBasenameNoExtension}",
+							"args": [],
+							"stopAtEntry": false,
+							"cwd": "${fileDirname}",
+							"environment": [],
+							"externalConsole": false,
+							"MIMode": "gdb",
+							"setupCommands": [
+								{
+									"description": "gdb の再フォーマットを有効にする",
+									"text": "-enable-pretty-printing",
+									"ignoreFailures": true
+								},
+								{
+									"description": "逆アセンブリ フレーバーを Intel に設定",
+									"text": "-gdb-set disassembly-flavor intel",
+									"ignoreFailures": true
+								}
+							],
+							"preLaunchTask": "C/C++: gcc アクティブなファイルのビルド",
+							"miDebuggerPath": "/usr/bin/gdb"
+						}
+					]
+				},
                 {
                     "description": "逆アセンブリ フレーバーを Intel に設定",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc アクティブなファイルのビルド",
+            "preLaunchTask": "C/C++: g++-11 アクティブなファイルのビルド",
             "miDebuggerPath": "/usr/bin/gdb"
         }
-    ]
+    ],
+    "version": "2.0.0"
 }
