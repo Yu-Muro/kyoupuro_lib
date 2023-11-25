@@ -4,5 +4,39 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.ignoreWords": [
+			// User名
+			"murotani",
+
+			// プログラム
+			"apikey",
+			"websockets",
+			"healthcheck",
+			"dryrun",
+			"openapi",
+			"hoge",
+			"fuga",
+			"piyo",
+			"boyaki",
+
+			// 競プロ
+			"atcoder",
+			"cxxflags",
+			"plong",
+			"vecint",
+			"vecll",
+			"vecld",
+			"repd",
+			"printd"
+		],
+		"clang.executable": "clang++",
+		"code-runner.runInTerminal": true,
+		"code-runner.executorMap": {
+			"cpp": "cd $dir && g++ -O2 $fileName -o $fileNameWithoutExt.out && ./$fileNameWithoutExt.out",
+		},
+		"files.associations": {
+			"random": "cpp"
+		}
+	}
 }
