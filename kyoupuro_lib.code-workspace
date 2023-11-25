@@ -21,6 +21,7 @@
 			"boyaki",
 
 			// 競プロ
+			"atcoder",
 			"cxxflags",
 			"plong",
 			"vecint",
