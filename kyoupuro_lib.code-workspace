@@ -10,6 +10,7 @@
 			"murotani",
 
 			// プログラム
+			"cmds",
 			"apikey",
 			"websockets",
 			"healthcheck",
@@ -22,8 +23,6 @@
 
 			// 競プロ
 			"atcoder",
-			"kyoupuro",
-			"tessoku",
 			"cxxflags",
 			"plong",
 			"vecint",
