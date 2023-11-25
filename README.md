@@ -23,3 +23,9 @@
 
 - add: {level}-{ac, wa, tle, etc.}
 - docs: change details
+
+### まっさらにする破壊コマンド
+
+```sh
+$ find ~/ -type f -name '*.out' -delete
+```

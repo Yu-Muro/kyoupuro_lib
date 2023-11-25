@@ -21,12 +21,21 @@
 			"boyaki",
 
 			// 競プロ
+			"cxxflags",
 			"plong",
 			"vecint",
 			"vecll",
 			"vecld",
 			"repd",
 			"printd"
-		]
+		],
+		"clang.executable": "clang++",
+		"code-runner.runInTerminal": true,
+		"code-runner.executorMap": {
+			"cpp": "cd $dir && g++ -O2 $fileName -o $fileNameWithoutExt.out && ./$fileNameWithoutExt.out",
+		},
+		"files.associations": {
+			"random": "cpp"
+		}
 	}
 }
