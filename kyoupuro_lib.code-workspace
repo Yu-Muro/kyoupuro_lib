@@ -22,6 +22,8 @@
 
 			// 競プロ
 			"atcoder",
+			"kyoupuro",
+			"tessoku",
 			"cxxflags",
 			"plong",
 			"vecint",
