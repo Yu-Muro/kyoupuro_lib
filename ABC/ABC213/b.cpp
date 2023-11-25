@@ -1,12 +1,9 @@
 #include <bits/stdc++.h>
 #include <atcoder/all>
-
 using namespace std;
 using namespace atcoder;
-
 typedef long long ll;
 typedef long double ld;
-
 #define mp make_pair
 #define pb(a) push_back(a)
 #define all(a) (a).begin(), (a).end()
@@ -22,9 +19,16 @@ typedef long double ld;
 #define REPD(i, n) for (ll i = n; i > 0; --i)
 #define REP2(i, a, b) for (ll i = a; i < b; ++i)
 #define REPD2(i, a, b) for (ll i = a; i > b; --i)
-#define printd(a, n) cout << fixed << setprecision(n) << a << endl
+#define printd(a, n) cout << std::fixed << std::setprecision(n) << a << endl
 
 int main() {
-    cout << "Hello" << endl;
+    int n; cin >> n;
+    vector<plong> a(n);
+    REP(i, n) {
+        ll tmp; cin >> tmp;
+        a[i] = mp(tmp, i+1);
+    }
+    sort(all(a));
+    cout << a[n-2].second << endl;
     return 0;
 }
