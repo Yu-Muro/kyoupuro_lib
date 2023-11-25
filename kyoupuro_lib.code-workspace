@@ -4,5 +4,29 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.ignoreWords": [
+			// User名
+			"murotani",
+
+			// プログラム
+			"apikey",
+			"websockets",
+			"healthcheck",
+			"dryrun",
+			"openapi",
+			"hoge",
+			"fuga",
+			"piyo",
+			"boyaki",
+
+			// 競プロ
+			"plong",
+			"vecint",
+			"vecll",
+			"vecld",
+			"repd",
+			"printd"
+		]
+	}
 }
