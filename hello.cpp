@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 
 using namespace std;
+using namespace atcoder;
 
 typedef long long ll;
 typedef long double ld;
@@ -9,7 +11,9 @@ typedef long double ld;
 #define pb(a) push_back(a)
 #define all(a) (a).begin(), (a).end()
 #define rall(a) (a).rbegin(), (a).rend()
-#define pll pair<ll, ll>
+#define pint pair<int, int>
+#define plong pair<ll, ll>
+#define vecint vector<int>
 #define vecll vector<ll>
 #define vecll2 vector<vecll>
 #define vecld vector<ld>
