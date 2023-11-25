@@ -1,0 +1,13 @@
+version: '3'
+
+env:
+    APP_NAME: algo
+
+tasks:
+    build:
+        cmds:
+            - docker build . -t $APP_NAME
+
+    run:
+        cmds:
+            - docker run -it $APP_NAME bash
