@@ -15,7 +15,7 @@
 ### ファイル
 
 - hello.cpp: C++のテンプレート
-- knapsack.cpp: ナップサック問題の解放
+- knapsack.cpp: ナップサック問題の解法
 - calc_divisor.cpp: 約数の列挙
 
 ### まっさらにする破壊コマンド
