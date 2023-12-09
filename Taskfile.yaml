@@ -1,13 +1,11 @@
 version: '3'
 
 env:
-    APP_NAME: algo
+  APP_NAME: algo
 
 tasks:
-    build:
-        cmds:
-            - docker build . -t $APP_NAME
+  build:
+    cmd: docker build . --name kyoupuro -it $APP_NAME
 
-    run:
-        cmds:
-            - docker run -it $APP_NAME bash
+  run:
+    cmd: docker run -it $APP_NAME bash

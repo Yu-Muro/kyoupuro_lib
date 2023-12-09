@@ -5,39 +5,69 @@
 		}
 	],
 	"settings": {
+		"cSpell.ignorePaths": [
+			"package-lock.json",
+			"node_modules",
+			"vscode-extension",
+			".git/objects",
+			".vscode",
+			".vscode-insiders",
+			"*.code-workspace"
+		],
 		"cSpell.ignoreWords": [
 			// User名
 			"murotani",
 
 			// プログラム
-			"cmds",
 			"apikey",
-			"websockets",
-			"healthcheck",
-			"dryrun",
-			"openapi",
-			"hoge",
-			"fuga",
-			"piyo",
 			"boyaki",
+			"cmds",
+			"dryrun",
+			"fuga",
+			"healthcheck",
+			"hoge",
+			"openapi",
+			"piyo",
+			"websockets",
 
 			// 競プロ
 			"atcoder",
 			"cxxflags",
+			"kyoupuro",
 			"plong",
+			"printd",
+			"repd",
+			"tessoku",
 			"vecint",
 			"vecll",
 			"vecld",
-			"repd",
-			"printd"
 		],
 		"clang.executable": "clang++",
 		"code-runner.runInTerminal": true,
 		"code-runner.executorMap": {
 			"cpp": "cd $dir && g++ -O2 $fileName -o $fileNameWithoutExt.out && ./$fileNameWithoutExt.out",
 		},
+		"editor.formatOnSave": true,
+		"extensions.ignoreRecommendations": false,
 		"files.associations": {
 			"random": "cpp"
-		}
-	}
+		},
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-extension-pack",
+			"mitaki28.vscode-clang",
+			"formulahendry.code-runner",
+			"streetsidesoftware.code-spell-checker",
+			"editorconfig.editorconfig",
+			"oderwat.indent-rainbow",
+			"ms-ceintl.vscode-language-pack-ja",
+			"christian-kohler.path-intellisense",
+			"esbenp.prettier-vscode",
+			"redhat.vscode-yaml",
+			"mosapride.zenkaku",
+			"ibm.output-colorizer",
+		],
+	},
 }
