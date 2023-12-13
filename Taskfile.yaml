@@ -1,11 +1,25 @@
 version: '3'
 
 env:
-  APP_NAME: algo
+  IMG: algo
+  NAME: kyoupuro
 
 tasks:
+  default:
+    cmd: docker ps
+
   build:
-    cmd: docker build . --name kyoupuro -it $APP_NAME
+    cmd: docker build . -t $IMG
 
   run:
-    cmd: docker run -it $APP_NAME bash
+    cmd: docker run --name $NAME -itd $IMG bash
+
+  up:
+    cmds:
+      - docker restart $NAME
+      - echo "The $NAME container has been successfully started"
+
+  down:
+    cmds:
+      - docker stop $NAME
+      - echo "The $NAME container has stopped"
