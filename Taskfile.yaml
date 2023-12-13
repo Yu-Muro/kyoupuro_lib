@@ -15,11 +15,16 @@ tasks:
     cmd: docker run --name $NAME -itd $IMG bash
 
   up:
-    cmds:
-      - docker restart $NAME
-      - echo "The $NAME container has been successfully started"
+    cmd: docker restart $NAME
 
   down:
+    cmd: docker stop $NAME
+
+  rm:
+    cmd: docker rm $NAME
+
+  prune:
     cmds:
       - docker stop $NAME
-      - echo "The $NAME container has stopped"
+      - docker rm $NAME
+      - docker rmi $IMG
