@@ -38,6 +38,7 @@ RUN pip install git+https://github.com/hinamimi/ac-library-python && \
 
 RUN pip install online-judge-tools
 RUN npm install -g atcoder-cli
+RUN npm install -g @go-task/cli
 
 COPY . /root/src
 
